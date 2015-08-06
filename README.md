@@ -6,34 +6,62 @@ I loved this project and created a custom PCB for it. He also has written up and
 
 Programming the Weather System Board
 
-Setup
--go to https://www.arduino.cc/en/main/software, download and install the IDE version 1.6.5
--in the IDE go to File, preferences, Additional Board Manager URLs enter: http://arduino.esp8266.com/package_esp8266com_index.json
--in Tools, Boards, Boards Manager, in Filter Type in ESP, click it and install that Board
--now in Tools, Board click Gerneric ESP8266 Module
+A. Install Arduino IDE
 
--install the ArduinoJson Library
--go to https://github.com/bblanchon/ArduinoJson and click the Download Zip button to the right
--in the IDE, Sketch, Include Library, Add .ZIP Library, select the ArduinoJson .zip file
--now in the IDE click Sketch, Include Library, you should see ArduinoJson way down the list
+1. Go to https://www.arduino.cc/en/main/software
+2. Download and install the Arduino IDE version 1.6.5
 
--figure out your Wifi SSID and password
--register for free and create a weather account at https://developer.forecast.io/
--copy your API Key down
 
-Programming the Board
--download the code from here: https://github.com/squix78/esp8266-projects
--File, Open .ino file
--enter your SSID and password after line 50
--enter your forecastApiKey
--enter your latitude and longitude from http://maps.google.com/ and noting the lat & long in the top address
--in the IDE click the checkmark button to see if it compiles without an error
--if no errors then 
+B. Add ESP8266 Support to Arduino IDE
 
--press and hold the little pushbutton
--while holding plug it into the a USB port
--wait 2 seconds and release the button
--in the IDE it should see it and auto install the driver
--Tools, Port, select the new com port and then the Right Arrow(Upload button)
--a bunch of little dots will pop up if it is successfully being programmed
+1. Start the Arduino IDE
+2. Go to File/Preferences
+3. In the "Additional Board Manager URLs:" box enter http://arduino.esp8266.com/package_esp8266com_index.json
+4. Click "OK"
+5. Go to Tools/Board/Boards Manager
+6. In "Filter your search..." box enter ESP
+7. Click "esp8266 by ESP8266 Community" to select it
+8. Click "Install"
+9. Go to Tools/Board
+10. Click "Generic ESP8266 Module"
 
+C. Install ArduinoJson Library
+
+1. Go to https://github.com/bblanchon/ArduinoJson
+2. Click the "Download ZIP" button on the right
+3. In the IDE, go to Sketch/Include Library/Add .ZIP Library
+4. Select the ArduinoJson .zip file
+5. Go to Sketch/Include Library
+6. Select the ArduinoJson library (you should see it way down the list)
+7. In the IDE, go to Sketch/Include Library/Manage Libraries
+8. In the "Filter your search..." box enter "Adafruit SSD1306"
+9. Click "Install"
+
+D. Register for a free Weather Account
+
+1. Go to https://developer.forecast.io
+2. Click on "Register"
+3. Create account
+4. Register for free and create a weather account at https://developer.forecast.io
+5. Copy down the API Key
+
+E. Programming and Configuring the Board
+
+1. In the IDE, go to File/New
+2. File/Save As to "weather-station-v2" (this creates a subdirectory of the same name)
+3. Go to https://github.com/squix78/esp8266-projects
+4. Click on "Download ZIP"
+5. Extract contents of downloaded zip to a temporary location
+6. Find subdirectory weather-station-v2 and copy contents to Arduino subdirectory weather-station-v2
+7. In the IDE, go to File/Open
+8. Select the weather-station-v2.ino
+9. Enter your SSID and password after line 50 //note that your weather-station-v2.ino is different from the one on squix//
+10. Enter your forecastApiKey
+11. Enter your latitude and longitude from http://maps.google.com/ and noting the lat & long in the top address
+12. In the IDE click the checkmark button to see if it compiles without an error
+13. If no errors then, press and hold the little pushbutton
+14. While holding pushbutton, plug it into a USB port
+15. Wait 2 seconds and release the button
+16. In the IDE it should see it and auto install the driver
+17. Tools/Port, select the new com port and then the Right Arrow (Upload button)
+18. A bunch of little dots will pop up if it is successfully being programmed
